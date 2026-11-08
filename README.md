@@ -8,7 +8,7 @@
 
 <img src="assets/stats.svg" width="100%" alt="14 projects built. 53k+ lines across Kant and Swarm. Kant runs on 5 platforms. Doug answers in about 800 ms.">
 
-<img src="assets/awards.svg" width="100%" alt="4th place at NETIT and 100 points, selected for NOIT, with SchoolSync. 4th place at a hackathon with OpenZagora.">
+<img src="assets/awards.svg" width="100%" alt="1st place at Tech Academy 2025, 4th place at NETIT, and 100 points and selected for NOIT, with SchoolSync. 4th place at a hackathon with OpenZagora.">
 
 <br>
 
@@ -94,7 +94,7 @@
 </details>
 
 <details>
-<summary><b>SchoolSync</b>&nbsp;&nbsp;<code>4th NETIT · 100 pts NOIT</code>&nbsp;&nbsp;Every piece of school equipment, accounted for</summary>
+<summary><b>SchoolSync</b>&nbsp;&nbsp;<code>1st Tech Academy 2025 · 4th NETIT · 100 pts NOIT</code>&nbsp;&nbsp;Every piece of school equipment, accounted for</summary>
 <br>
 
 **The problem.** Schools lend out projectors, laptops, cameras and lab kits on paper, or not at all. Nobody knows what's where, what's broken, or who has it.
@@ -105,7 +105,7 @@
 - **Roles** &nbsp; Student, teacher, manager and admin, each seeing only what they should
 - **Frontend** &nbsp; React, Vite, Chart.js, Framer Motion, an in-browser QR scanner
 - **Backend** &nbsp; Node and Express, Joi validation, Docker deployment
-- **Results** &nbsp; 4th place at NETIT. 100 points and selected for NOIT
+- **Results** &nbsp; 1st place at Tech Academy 2025. 4th place at NETIT. 100 points and selected for NOIT
 
 [Repository](https://github.com/CecuTheMag/SchoolSync)
 
