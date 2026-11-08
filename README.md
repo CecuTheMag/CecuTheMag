@@ -1,4 +1,4 @@
-<a href="https://kant.network"><img src="assets/header.svg" width="100%" alt="I build systems with no servers, from idle browsers, that save lives, that answer my phone."></a>
+<a href="https://kant.network"><img src="assets/header.svg?v=4" width="100%" alt="I build systems with no servers, from idle browsers, that save lives, that answer my phone."></a>
 
 <p align="center">
   <a href="https://kant.network"><b>kant.network</b></a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#selected-work">Selected work</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#under-the-hood">Under the hood</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#everything-else">Everything else</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="mailto:magcecu@gmail.com">Contact</a>
@@ -6,9 +6,9 @@
 
 <br>
 
-<img src="assets/stats.svg" width="100%" alt="14 projects built. 53k+ lines across Kant and Swarm. Kant runs on 5 platforms. Doug answers in about 800 ms.">
+<img src="assets/stats.svg?v=4" width="100%" alt="14 projects built. 53k+ lines across Kant and Swarm. Kant runs on 5 platforms. Doug answers in about 800 ms.">
 
-<img src="assets/awards.svg" width="100%" alt="1st place at Tech Academy 2025, 4th place at NETIT, and 100 points and selected for NOIT, with SchoolSync. 4th place at a hackathon with OpenZagora.">
+<img src="assets/awards.svg?v=4" width="100%" alt="1st place at Tech Academy 2025, 4th place at NETIT, and 100 points and selected for NOIT, with SchoolSync. 4th place at a hackathon with OpenZagora.">
 
 <br>
 
@@ -17,20 +17,20 @@
 <sub>Eight products, from cryptographic protocols to a trading desk. Click a card to open it.</sub>
 
 <p align="center">
-  <a href="https://github.com/CecuTheMag/Kant"><img src="assets/kant.svg" width="49%" alt="Kant: encrypted peer-to-peer messenger"></a>
-  <a href="#swarm"><img src="assets/swarm.svg" width="49%" alt="Swarm: a supercomputer made of idle browsers"></a>
+  <a href="https://github.com/CecuTheMag/Kant"><img src="assets/kant.svg?v=4" width="49%" alt="Kant: encrypted peer-to-peer messenger"></a>
+  <a href="#swarm"><img src="assets/swarm.svg?v=4" width="49%" alt="Swarm: a supercomputer made of idle browsers"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/CecuTheMag/Defikarta"><img src="assets/defikarta.svg" width="49%" alt="ДефиКарта: nearest AED and guided CPR"></a>
-  <a href="https://github.com/CecuTheMag/SchoolSync"><img src="assets/schoolsync.svg" width="49%" alt="SchoolSync: school equipment tracked by QR"></a>
+  <a href="https://github.com/CecuTheMag/Defikarta"><img src="assets/defikarta.svg?v=4" width="49%" alt="ДефиКарта: nearest AED and guided CPR"></a>
+  <a href="https://github.com/CecuTheMag/SchoolSync"><img src="assets/schoolsync.svg?v=4" width="49%" alt="SchoolSync: school equipment tracked by QR"></a>
 </p>
 <p align="center">
-  <a href="#open-zagora"><img src="assets/openzagora.svg" width="49%" alt="Open Zagora: municipal transparency dashboard"></a>
-  <a href="#advdash"><img src="assets/advdash.svg" width="49%" alt="advDash: fleet control for browser automation"></a>
+  <a href="#open-zagora"><img src="assets/openzagora.svg?v=4" width="49%" alt="Open Zagora: municipal transparency dashboard"></a>
+  <a href="#advdash"><img src="assets/advdash.svg?v=4" width="49%" alt="advDash: fleet control for browser automation"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/CecuTheMag/Buttonwood"><img src="assets/buttonwood.svg" width="49%" alt="Buttonwood: self-hosted Solana trading desk on Telegram"></a>
-  <a href="https://github.com/CecuTheMag/DougWeb"><img src="assets/doug.svg" width="49%" alt="Doug: an AI that answers and screens your calls"></a>
+  <a href="https://github.com/CecuTheMag/Buttonwood"><img src="assets/buttonwood.svg?v=4" width="49%" alt="Buttonwood: self-hosted Solana trading desk on Telegram"></a>
+  <a href="https://github.com/CecuTheMag/DougWeb"><img src="assets/doug.svg?v=4" width="49%" alt="Doug: an AI that answers and screens your calls"></a>
 </p>
 
 <br>
@@ -243,10 +243,10 @@ The two-person agency I co-run. We get suspended Google listings reinstated (pai
 
 ## Stack
 
-<img src="assets/stack.svg" width="100%" alt="Systems: Rust, TypeScript, Python, WebAssembly, WGSL. Network and crypto: libp2p, libsodium, Circuit Relay v2, WebSockets, SSE. Product: React, React Native, Expo, Electron, Vite. Infra: Postgres, Docker, Caddy, Supabase, GitHub Actions.">
+<img src="assets/stack.svg?v=4" width="100%" alt="Systems: Rust, TypeScript, Python, WebAssembly, WGSL. Network and crypto: libp2p, libsodium, Circuit Relay v2, WebSockets, SSE. Product: React, React Native, Expo, Electron, Vite. Infra: Postgres, Docker, Caddy, Supabase, GitHub Actions.">
 
 <br>
 
-<a href="mailto:magcecu@gmail.com"><img src="assets/footer.svg" width="100%" alt="Open to hard problems, cofounders and contract work."></a>
+<a href="mailto:magcecu@gmail.com"><img src="assets/footer.svg?v=4" width="100%" alt="Open to hard problems, cofounders and contract work."></a>
 
 <p align="center"><a href="mailto:magcecu@gmail.com">magcecu@gmail.com</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://kant.network">kant.network</a></p>
