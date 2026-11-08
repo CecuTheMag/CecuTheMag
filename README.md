@@ -1,4 +1,4 @@
-<a href="https://kant.network"><img src="assets/header.svg" width="100%" alt="I build systems with no servers, from idle browsers, that save lives, that people pay for."></a>
+<a href="https://kant.network"><img src="assets/header.svg" width="100%" alt="I build systems with no servers, from idle browsers, that save lives, that answer my phone."></a>
 
 <p align="center">
   <a href="https://kant.network"><b>kant.network</b></a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#selected-work">Selected work</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#under-the-hood">Under the hood</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#everything-else">Everything else</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="mailto:magcecu@gmail.com">Contact</a>
@@ -6,11 +6,15 @@
 
 <br>
 
+<img src="assets/stats.svg" width="100%" alt="14 projects built. 53k+ lines across Kant and Swarm. Kant runs on 5 platforms. Doug answers in about 800 ms.">
+
 <img src="assets/awards.svg" width="100%" alt="4th place at NETIT and 100 points, selected for NOIT, with SchoolSync. 4th place at a hackathon with OpenZagora.">
 
 <br>
 
 ## Selected work
+
+<sub>Eight products, from cryptographic protocols to a trading desk. Click a card to open it.</sub>
 
 <p align="center">
   <a href="https://github.com/CecuTheMag/Kant"><img src="assets/kant.svg" width="49%" alt="Kant: encrypted peer-to-peer messenger"></a>
@@ -22,14 +26,18 @@
 </p>
 <p align="center">
   <a href="#open-zagora"><img src="assets/openzagora.svg" width="49%" alt="Open Zagora: municipal transparency dashboard"></a>
-  <a href="#findr"><img src="assets/findr.svg" width="49%" alt="Findr: AI study advisor for universities"></a>
+  <a href="#advdash"><img src="assets/advdash.svg" width="49%" alt="advDash: fleet control for browser automation"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/CecuTheMag/Buttonwood"><img src="assets/buttonwood.svg" width="49%" alt="Buttonwood: self-hosted Solana trading desk on Telegram"></a>
+  <a href="https://github.com/CecuTheMag/DougWeb"><img src="assets/doug.svg" width="49%" alt="Doug: an AI that answers and screens your calls"></a>
 </p>
 
 <br>
 
 ## Under the hood
 
-<sub>Click any project to open it.</sub>
+<sub>The engineering behind each card. Click any project to expand it.</sub>
 
 <details>
 <summary><b>Kant</b>&nbsp;&nbsp;<code>messaging</code>&nbsp;&nbsp;No servers, no phone numbers, no metadata to hand over</summary>
@@ -120,19 +128,65 @@
 </details>
 
 <details>
-<summary><b>Findr</b>&nbsp;&nbsp;<code>AI · B2B</code>&nbsp;&nbsp;A study advisor universities drop into their site</summary>
-<a id="findr"></a>
+<summary><b>advDash</b>&nbsp;&nbsp;<code>infrastructure</code>&nbsp;&nbsp;A fleet of real browsers, run from one dashboard</summary>
+<a id="advdash"></a>
 <br>
 
-**The problem.** A student looking for *"a free master's in renewable energy, taught in English"* gets a hundred tabs and no answer.
+**The problem.** Browser automation across many accounts usually means a pile of scripts, one shared browser profile, and no way to see what's happening on screen.
 
-**What it does.** A chat agent answers from a catalogue of 2,215 programmes at 230 German universities, then keeps the conversation going until the student knows where to apply. It's sold to universities as a one-tag embed that runs on our domain, is authorised by a connection key and is metered per partner.
+**What it does.** Each account gets its own container: a real, visible Chromium on a virtual display, behind its own proxy, with a persistent profile. The dashboard creates them, dispatches jobs to them, streams their logs and shows any browser live over noVNC. When a login asks for a 2FA code, you click in and type it yourself. Your automation code goes in one folder and is called through a single function, `run(ctx)`. Accounts, credentials, proxies, containers, lifecycle, logs and job history are all handled for you.
 
-- **Retrieval** &nbsp; The catalogue lives in its own Postgres with full-text and trigram indexes, queried through a `search_courses` tool. Free, fast, and inspectable, with web search as the fallback
-- **Security** &nbsp; Separate app and admin stacks: different JWT secrets, databases and CORS origins. No credential crosses between them
-- **Stack** &nbsp; Node, Postgres, React, nginx, Docker Compose
+- **Orchestrator** &nbsp; FastAPI, SQLite and the Docker SDK. It owns the fleet through `docker.sock` and talks to the dashboard over HTTP and one websocket
+- **Sessions** &nbsp; Import fifty from a single paste. Start, stop, recreate or wipe in bulk, and move an account to another host as an encrypted bundle
+- **Proxies** &nbsp; Paste them in any format, test them for real, assign them, and watch them: background health checks, auto-disable, and sticky-IP drift detection
+- **Jobs** &nbsp; Every dispatch is kept with its parameters, return value and traceback. Schedules sit on the same board
+- **Profiles** &nbsp; Generated once from a stored seed and rebuilt exactly the same on every restart, so nothing changes under a running account
+- **Operations** &nbsp; Operator accounts, backups, host capacity and job outcomes, a `⌘K` command palette, and a fully keyboard-driven UI
+- **Dev loop** &nbsp; The code folder is bind-mounted, so editing a file and hitting reload replaces a full image rebuild
+- **Codebase** &nbsp; About 29k lines of Python, tests included
 
 <sub>Private.</sub>
+
+</details>
+
+<details>
+<summary><b>Buttonwood</b>&nbsp;&nbsp;<code>trading systems</code>&nbsp;&nbsp;A Solana trading desk that has to prove itself first</summary>
+<br>
+
+**The problem.** Most crypto bots promise profit and show you nothing. Buttonwood works the other way round: prove it on paper, measure it honestly, and only then talk about real money.
+
+**What it does.** It runs on your own server and talks only to you, on Telegram. It watches your Phantom wallet, paper-trades a $1,000 account on live Jupiter quotes with network fees included, finds and copies whale wallets that show a real edge, and compares every strategy with simply holding SOL.
+
+- **Whale autopilot** &nbsp; Rebuilds each candidate wallet's recent round trips and follows only those with a real win rate and copyable hold times. It drops idle whales, auto-pauses losing ones, and measures what following costs: seconds behind, and how much worse the price was
+- **Token safety** &nbsp; Checks liquidity, holders, age, mint and freeze authority and holder concentration, plus a buy-then-sell quote that catches honeypots, before every copied buy
+- **Strategy lab** &nbsp; Trend following, grid, rebalancing, DCA and take-profit/stop-loss, each in its own budget sleeve. A backtester replays months of history using the same code that trades live, and a weekly tournament moves capital toward what's working
+- **Risk manager** &nbsp; Every order from every source passes through it: max size, concentration, a daily loss limit, buys per hour, and a quote sanity check. A `/stop` kill switch survives restarts, and sells are never blocked
+- **Wallets** &nbsp; Two-wallet model: Phantom stays the vault. The bot's encrypted wallet can withdraw only back to your Phantom address
+- **Always on** &nbsp; Runs under systemd. After any downtime it reports what it missed, and it buys a missed DCA order once, not N times. A health monitor flags failing jobs
+- **Readiness** &nbsp; `/readiness` is a go-live checklist the paper record has to pass before real money is even discussed
+
+[Repository](https://github.com/CecuTheMag/Buttonwood) · <sub>Paper trading only. Not financial advice.</sub>
+
+</details>
+
+<details>
+<summary><b>Doug</b>&nbsp;&nbsp;<code>voice AI</code>&nbsp;&nbsp;An AI that answers your phone, so only the right calls reach you</summary>
+<br>
+
+**The problem.** Most calls to a busy person are spam, sales, or something a message would have covered.
+
+**What it does.** Your carrier forwards calls to Doug. It greets the caller, finds out who they are and what they want in natural conversation, and checks your calendar and rules. Then it puts them through to you live, takes a message, or ends the call. You get a summary the moment it hangs up.
+
+- **Pipeline** &nbsp; Twilio Media Streams, Deepgram `nova-2-phonecall` streaming speech-to-text, a fast LLM, and ElevenLabs Flash
+- **Zero transcoding** &nbsp; 8 kHz μ-law end to end. Every stage speaks it natively, which saves roughly 60–100 ms per round trip
+- **Latency budget** &nbsp; Endpointing 300 ms, STT 100, first LLM token 250, TTS 150: about 800 ms to the first word. Speech starts sentence by sentence, before the model finishes
+- **Barge-in** &nbsp; Voice-activity events let the caller interrupt Doug mid-sentence
+- **Rules first** &nbsp; VIP numbers go straight through and blocked numbers are rejected before any AI runs
+- **Tools** &nbsp; `transfer_call` (a live SIP handoff to your phone), `take_message`, `end_call`
+- **Multi-tenant** &nbsp; Personal and business personas, picked from the number that was dialled
+- **Tests** &nbsp; 44, none of which need API keys or the network
+
+[Website source](https://github.com/CecuTheMag/DougWeb)
 
 </details>
 
@@ -144,28 +198,14 @@
 <tr>
 <td width="50%" valign="top">
 
-**[Buttonwood](https://github.com/CecuTheMag/Buttonwood)** &nbsp;<sub><code>TypeScript</code></sub><br>
-Self-hosted Telegram trading companion for Solana. It paper-trades on live Jupiter quotes, follows whale wallets after token safety checks, and scores every strategy by its actual results.
+**Findr** &nbsp;<sub><code>LLM agents</code> <code>Postgres</code></sub><br>
+An AI study advisor that universities embed with one tag. It answers from 2,215 programmes at 230 German universities, held in its own indexed Postgres.
 
 </td>
 <td width="50%" valign="top">
 
-**advDash** &nbsp;<sub><code>Python</code> <code>Docker</code></sub><br>
-Fleet control for browser automation. One container per account, each with a real, visible Chromium behind its own proxy, plus a dashboard to create, watch and dispatch them.
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
 **Техничар** &nbsp;<sub><code>TypeScript</code></sub><br>
 A verified peer-to-peer hardware marketplace for Bulgaria: components, networking gear and homelab kit, with a hardware scanner wired end to end. Bilingual.
-
-</td>
-<td valign="top">
-
-**[Doug](https://github.com/CecuTheMag/DougWeb)** &nbsp;<sub><code>Python</code> <code>TypeScript</code></sub><br>
-A low-latency AI executive assistant that answers and screens your incoming calls. The web interface is open source.
 
 </td>
 </tr>
